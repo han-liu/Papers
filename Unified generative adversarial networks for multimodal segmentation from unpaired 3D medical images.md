@@ -5,11 +5,11 @@
 
 ****
 
-### Technical problem:
+### Objective
 Unpaired multi-modality segmentation
 
 
-### Methods
+### Proposed Method
 
 
 ### Comments
