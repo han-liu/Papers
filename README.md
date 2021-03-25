@@ -4,7 +4,7 @@ Dear friends, here is the list of papers that I read during my Ph.D. period.
 
 ****
 
-Most of the papers are in the field of medical image analysis and computer vision. 
+Most of the papers are in the field of **medical image analysis** and **computer vision**. 
 
 In each summary, I will include the following parts: (1) objective, (2) proposed method, (3) my version and the difference, and (4) comments.
 
