@@ -11,6 +11,8 @@ Image segmentation (tubular structures)
 ### Proposed Method
 A 3D network is used to produce (1) segmentation probability map and (2) distance map. The authors proposed to convert regression task to classification task by quantizing the distances to K bins. With the segmentation probability map and the quantized distance map, the final result can be reconstructed. Thresholding (T=0.98) was used to determine the skeleton of the segmentated object. For each pixel that belongs to the skeleton, Gaussian ball was created such that the mean was the x, y, z coordinate and the standard deviation is 1/3 of the predicted radii. Each Gaussian ball was then softened by a normalized factor and multiplied by the segmentation probability. The summation of all balls was then thresholded (T=0.5) to obtain the final result.
 
+![alt text](https://github.com/han-liu/Papers/blob/master/figures/Deep%20Distance%20Transform%20for%20Tubular%20Structure%20Segmentation%20in%20CT%20Scans.png?raw=true)
+
 ### Comments
 - Very interesting paper to read. However, I believe the strong anatomical tubular shape prior has NOT been fully exploited. The only part using anatomical prior is the refinement process; this can be regarded as offline post-processing because the reconstructed shape was not involved in training process. The question is, can we enforce the tubular shape constraint during training? For example, the skeleton points (x, y, z) coordinates and their value, i.e., radii, should not vary between adjacent slices. (But is this implicitly resolved by 3D CNN? intra-slice information?)
 
