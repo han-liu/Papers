@@ -11,10 +11,14 @@ Knowledge distillation for missing modality (without post-contrast T1 images in 
 ### Proposed Method
 The proposed method is based on the Teacher-student model and is very similar to [KD-Net](https://link.springer.com/content/pdf/10.1007%2F978-3-030-59710-8_75.pdf) from MICCAI 2020. The difference is (1) instead of directly computing the KL loss of latent space features and KD loss (dice + BCE) between binary teacher prediction and student prediction as in KD-Net, HAD-Net takes (1) the student prediction (2) teacher prediction (3) latent space features and uses a discriminator to make the inputs from teacher and students undifferentiable.
 
+KD-net and HAD-Net architectures are shown here.
+![Alt text](https://github.com/han-liu/Papers/blob/master/figures/KD-Net.png?raw=true)
+
+![Alt text](https://github.com/han-liu/Papers/blob/master/figures/HAD-Net%20A%20Hierarchical%20Adversarial%20Knowledge%20Distillation%20Network%20for%20Improved%20Enhanced%20Tumour%20Segmentation%20Without%20Post-Contrast%20Images.png?raw=true)
+
 
 ### Comments
 - This method seems generalizable for any missing modality but only validated on the w/o T1CE dataset. It would be interesting to see how it performs on other missing modalities and the comparison against SOTA methods.
-
 
 
 
