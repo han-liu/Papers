@@ -13,7 +13,7 @@ UDA
 Optimal transport (OT) model is used in domain adaptation for distribution matching. Two limitations of previous OT methods include (1) mini-batch training cannot fully reflect the true distribution of source and target domain and (2) label information and latent structure of the target domain are usually ignored. A shared feature extractor was used for both source and target domain. The distance matrix of source and target domain samples are re-weighted according to the classification prediction from two domains. This step is supposed to adjust the mini-batch distribution to the real distribution. However, I have not fully understood the Kantorovich potential (KP) section... I believe the KP serves as a regularization for domain adaptation. The final loss includes (1) CE loss in source domain (2) entropy of target domain and (3) KP loss. 
 
 
-![Alt text](https://github.com/han-liu/Papers/blob/master/figures/Prototypical%20Networks%20for%20Few-shot%20Learning.png?raw=true)
+![Alt text](https://github.com/han-liu/Papers/blob/master/figures/Enhanced%20Transport%20Distance%20for%20Unsupervised%20Domain%20Adaptation.png?raw=true)
 
 
 ### Comments
