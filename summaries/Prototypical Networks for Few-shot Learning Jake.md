@@ -11,7 +11,7 @@ Few/Zero-shot learning (FSL)
 ### Proposed Method
 The authors proposed to address the overfitting issue in few-shot learning. For each class, prototypical network takes the mean feature vector of the support set in embedding space. The distance between incoming feature and the prototype is computed as the Bregman divergence, e.g., squared euclidean distance. Unlike classic classification networks, prototypical networks calculates the softmax probability using the feature distance rather than logits. During training, meta-learning is used to simulate the few-shot learning scenarios, e.g., we randomly select partial dataset from partial classes for meta-train and meta-test.
 
-![Alt text](https://github.com/han-liu/Papers/blob/master/figures/XProtoNet%20Diagnosis%20in%20Chest%20Radiography%20with%20Global%20and%20Local%20Explanations.png?raw=true)
+![Alt text](https://github.com/han-liu/Papers/blob/master/figures/Prototypical%20Networks%20for%20Few-shot%20Learning.png?raw=true)
 
 
 ### Comments
