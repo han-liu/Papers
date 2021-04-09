@@ -2,6 +2,7 @@
 - Self-Attentive Spatial Adaptive Normalization for Cross-Modality Domain Adaptation [[pdf]](https://arxiv.org/pdf/2103.03781.pdf) 
 - *Devavrat Tomar, Manana Lortkipanidze, Guillaume Vray, Behzad Bozorgtabar, Jean-Philippe Thiran*
 - `2021, TMI`
+- [code](https://github.com/devavratTomar/sasan)
 
 ****
 
@@ -9,9 +10,11 @@
 UDA unpaired image segmentation.
 
 ### Proposed Method
-A 3D network is used to produce (1) segmentation probability map and (2) distance map. The authors proposed to convert regression task to classification task by quantizing the distances to K bins. With the segmentation probability map and the quantized distance map, the final result can be reconstructed. Thresholding (T=0.98) was used to determine the skeleton of the segmentated object. For each pixel that belongs to the skeleton, Gaussian ball was created such that the mean was the x, y, z coordinate and the standard deviation is 1/3 of the predicted radii. Each Gaussian ball was then softened by a normalized factor and multiplied by the segmentation probability. The summation of all balls was then thresholded (T=0.5) to obtain the final result.
+The proposed method is one of the image-to-image translation methods for UDA. The pipeline is similar to the SynSeg framewor. The differences are (1) attention module, (2) discriminator for segmentation, (3) SPADE ResNetBlock to combine attention feature maps (4) orthogonal loss to make attention maps avoid redundency.
 
-![alt text]()
+![alt text](https://github.com/han-liu/Papers/blob/master/figures/Self-Attentive%20Spatial%20Adaptive%20Normalization%20for%20Cross-Modality%20Domain%20Adaptation.png?raw=true)
 
 ### Comments
-- UDA with image synthesisSynSeg 
+- This paper shows that multi-task, i.e., segmentation and image synthesis, could be beneficial for individual other. 
+
+- The code implementation of formula (1) is different from what was described in the paper.
