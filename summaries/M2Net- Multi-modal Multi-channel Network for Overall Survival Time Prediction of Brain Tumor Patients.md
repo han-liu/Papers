@@ -9,11 +9,17 @@
 Overall survival (OS) prediction (3-class classification) with multi-modality dataset (Brats 2018) 
 
 ### Proposed Method
+First, 124x124x124 patches are cropped at the center of tumor for four modalities including T1, T1CE, T2 and FLAIR. For each modality, 3D volumes are projected to 2D image by taking the sum of all slices in each direction. The three-channel image of each modality are then fed into separate feature extractors (ResNet34) for domain-specific features. Based on the figure, the features from each moddlity is then connected to a FC layer and concatenated with supplemental feature for classification. However, this was not clearly stated in the paper. Bilinear pooling was used to fuse the features from different feature extractors and fed to FC as another prediction head (shared head). Lastly, the softmax output neurons from each modality and shared head are concatenated for another prediction. 
 
-
-![alt text]()
+![alt text](https://github.com/han-liu/Papers/blob/master/figures/M2Net%20Multi-modal%20Multi-channel%20Network%20for%20Overall%20Survival%20Time%20Prediction%20of%20Brain%20Tumor%20Patients.png?raw=true)
 
 ### Comments
-- The proposed method did not compare with the updated versions of Prob U-nets, even though these methods were mentioned in the related work section... In the experiment, only deterministic U-net and Prob U-net are compared.
+- It was unclear which prediction head's result was used as the final prediction (I assume the fusion branch is used).
 
-- Since the latent vector is sampled from VAE first, would the Gaussian mean feature vector the most likely prediction, i.e., the one with highest Dice score? If so, why do we need other less likely predictions? Besides, methods like this such as Prob U-net or Stochastic Segmentation Network usually were only evaluated using metrics like GED. These methods did not really assess the qualities of the uncertainty maps. It should be made more clear why we need these methods if (1) they did not provide better segmentation results in terms of Dice and (2) the quality of uncertainty maps are not shown to be more effective than MC Dropout or model ensemble.
+- Bilinear pooling is useful to merge features from different branches.
+
+- Supplemental features could be merged to flattened feature vectors by concatenation.
+
+- The experiments presented in the paper should be divided into comparison to SOTA and ablation studies. It seems that in classification tasks, especially 3D applications, there were no strong or clear baseline methods.
+
+- It does not make sense to me how classification could be performed with only the 2D projection images as inputs... 
