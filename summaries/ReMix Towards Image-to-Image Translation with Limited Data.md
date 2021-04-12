@@ -9,8 +9,12 @@
 Image translation with limited data
 
 ### Proposed Method
+This paper is focused on image-to-image translation task. The authors proposed to mix-up features in a linear manner at latent space. A relative form loss is proposed. Specifically, unlike mix-up which interpolates the label linearly, the authors proposed a new loss which (1) forces the content loss (perceptual loss or style reconstruction loss..) between interpolated feature e' and e1 is greater than that between e' and e2, (2) the content loss between e' and feature from any other random image is greater than the previous two losses.
 
-![Alt text](https://github.com/han-liu/Papers/blob/master/figures/Implicit%20Semantic%20Data%20Augmentation%20for%20Deep%20Networks.png?raw=true)
+![Alt text](https://github.com/han-liu/Papers/blob/master/figures/ReMix%20Towards%20Image-to-Image%20Translation%20with%20Limited%20Data.png?raw=true)
 
 
 ### Comments
+- Strategies, i.e., mix-up, applied to input image and output space can also be applied to feature space. 
+
+- It would be interesting to know if this method is useful for classification task, either in fully-supervised or semi-supervised settings.
