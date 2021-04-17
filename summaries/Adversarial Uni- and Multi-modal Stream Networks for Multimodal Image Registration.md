@@ -19,3 +19,5 @@ Multi-modal unsupervised image registration (from CT to MR)
 - Similar to the I2I-based UDA methods, this paper shows that with additional input of translated uni-modal image, registration could be improved.
 
 - The authors mentioned that 'After Uni- and Multi-model Stream networks, we obtain two deformation fields'. This statement is not correct because the total loss is only calculated regarding the final deformation field. In other words, without any regularization or losses, the so-called 'two deformation fields' do not have the physical meaning of deformation fields. Instead, they are only intermediate products used to create the final deformation field. Therefore, the experiments where the authors qualitatively compared the 'deformation fields' from uni-modal path and the fused field cannot be used to show the effectiveness of field fusion.
+
+- Would it be possible to train GAN and VXM end-to-end? There are several papers building semgentation networks upon GAN but it seems that there was no work on the combination of registration and GAN.
