@@ -7,14 +7,14 @@
 ****
 
 ### Objective
-Domain generalization (classification)
+New evaluation metric for segmentation.
 
 ### Proposed Method
-The proposed method aims to improve the model generalization ability by training on adversial samples. Three loss terms are considered: (1) classification loss: cross-entropy loss, (2) constraint loss and (3) relaxation loss. The constraint loss aims to have an opposite effects as the relaxation loss: limited domain transportation vs relaxation of semantic consistency (similar to GAN, they have an adverserial relationship). Specifically, the constraint loss is used to minimize the Wasserstein distance between the latent features between source domain image and adverserial samples. The relaxation loss is computed by using a WAE (pre-trained on source domain images) and expected to `maximize` the reconstruction loss of adverserial samples. Lastly, meta-learning to used where meta-train is the source domain images while meta-test is the adverserial samples.
+A new evaluation metric Boundary IoU is proposed to better capture the segmentation error around the contours. This metric is not severely affected by the object size as mask IoU. However, this metric may not work well for the masks with holes inside the contours: it could yield a perfect score in these cases. Thus, the Boundary AP, which is the minimum of Boundary IoU and mask IoU, can be used since most of the boundary IoU values are smaller than the mask IoU.
 
-![Alt text](https://github.com/han-liu/Papers/blob/master/figures/Learning%20to%20Learn%20Single%20Domain%20Generalization.png?raw=true)
+![Alt text](https://github.com/han-liu/Papers/blob/master/figures/Boundary%20IoU.png?raw=true)
 
 
 ### Comments
 
-- Very interesting paper to read. It seems that meta-learning is a powerful tool for domain generalization problems. The WAE used in this paper is essentially a domain classifier which can be trained without domain code/ground truth. 
+- This metric can be very useful to capture subtle segmentation errors around boundary when the segmentation model is well trained. However, it may not be an appropriate metric at the beginning of the training.
