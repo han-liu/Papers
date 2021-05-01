@@ -1,4 +1,4 @@
-[2021-04-20]
+[2021-04-19]
 - Generalized Organ Segmentation by Imitating One-shot Reasoning using Anatomical Correlation [[pdf]](https://arxiv.org/abs/2103.16344) 
 - *Hong-Yu Zhou, Hualuo Liu, Shilei Cao, Dong Wei, Chixiang Lu, Yizhou Yu, Kai Ma, Yefeng Zheng*
 - `2021 IPMI`
