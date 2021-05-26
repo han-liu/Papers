@@ -10,11 +10,9 @@ Cross Partial Multi-view learning
 
 
 ### Proposed Method
+There are two key points proposed by this paper: 1. completeness and 2. versatility. With partial multi-view data, the author assumed that the complete multi-view representation can be used to reconstruct each view. The complete latent feature is used for final classification. The reconstruction loss is computed for each available views. For versatility, a method similar to prototypical learning is used: when a sample is correctly classified, no loss is computed; when wrongly classified, a loss similar to triplet loss is used to penalize the wrongly classified complete latent feature h to enforce that its similarity to the correct class feature center is higher than those of wrong classes (center was not clearly defined in this paper). During testing, the network is retuned by conducting reconstruction task. 
 
-
-![Alt text](https://github.com/han-liu/Papers/blob/master/figures/Unified%20generative%20adversarial%20networks%20for%20multimodal%20segmentation%20from%20unpaired%203D%20medical%20images.jpg?raw=true)
+![Alt text](https://github.com/han-liu/Papers/blob/master/figures/CPM-nets.png?raw=true)
 
 ### Comments
-- I like how this paper interprets the U-net decoding process: 'In the U-Net architecture, the encoders capture multilevel information from low-level textures to high-level semantic knowledge. The decoders first produce the coarse location of target objects and then combine the lower level details from the skip connection and gradually reconstruct the final results'. Ablation study of the effect of the levels of cross-task skip connections is also conducted.  
-
-- Is there a better way to fuse the decoding code, i.e., [-1, 1, 0, 0] and the 3D volume? Direct broadcasting does not seem to be a good strategy.
+- Great idea of forming a complete latent feature and reconstruct back to individual input. This is in contrast to common methods that use multi-inputs to create a common space. This scheme can overcome the limitation of having missing modalities.
