@@ -18,4 +18,4 @@ The proposed method consists of two components: (1) segmentation model and (2) D
 
 - It would be more informative if we can visualize the initial segmentation results and the DAE refined masks. 
 
-- The weakly-supervised mechanism seems to work similarly like patch-based segmentation, where the foreground defined by weak labels can be considered as deformed patches. Hoepfully, the foreground pixels with correct weak labels can be learned and generalized to other unlabeled foreground pixels. 
+- The weakly-supervised mechanism seems to work similarly like patch-based segmentation, where the foreground defined by weak labels can be considered as deformed patches. Hopefully, the foreground pixels with correct weak labels can be learned and generalized to other unlabeled foreground pixels. 
