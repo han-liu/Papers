@@ -1,6 +1,6 @@
 [2022-06-25]
 - Marginal loss and exclusion loss for partially supervised multi-organ segmentation [[pdf]](https://arxiv.org/pdf/2007.03868.pdf) 
-- *Gonglei Shia, Li Xiao, Yang Chen, S. Kevin Zhou*
+- *Gonglei Shi, Li Xiao, Yang Chen, S. Kevin Zhou*
 - `Medical Image Analysis 2020`
 
 ****
