@@ -1,6 +1,6 @@
 # Papers
 
-Dear friends, here is the list of papers that I read during my Ph.D. period.
+Here is the list of papers that I read as a researcher in the field of medical image analysis and AI for healthcare.
 
 ****
 
